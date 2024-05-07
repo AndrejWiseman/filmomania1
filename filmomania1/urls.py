@@ -1,5 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,8 +14,10 @@ urlpatterns = [
     path('tag/', include('tagged.urls')),
 
     path('video/', include('video.urls')),
-
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # prva baza podataka
 # PGHOST='ep-winter-grass-a2tqpm2x.eu-central-1.aws.neon.tech'
