@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Domaci Filmovi | {{ tag.name | capfirst }}
+{% endblock %}
+
+
+{% block content %}
+
+    {% if tag.name %}
+        <h1 class="podeok2">
+            {{ tag.name | capfirst }}
+        </h1>
+    {% else %}
+        <h1 class="podeok">
+            Domaci filmovi
+        </h1>
+    {% endif %}
+
+    <div class="kontejner">
+
+        <div class="tags">
+            <h5>Zanrovi</h5>
+            <p>Broj filmova: {{ queryset.count }}</p>
+
+            <div class="zanr">
+                <a href="{% url 'domaci_filmovi:domaci_filmovi' %}">Svi filmovi</a>
+                {% for mt in common_tags %}
+                    <a href="{% url 'domaci_filmovi:tagged' mt.slug %}">{{ mt | capfirst}} ({{ mt.num_times }})</a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="lista">
+        {% if queryset %}
+          {% for qs in queryset %}
+              <div class="objekt">
+                  <a href="{{ qs.get_absolute_url }}" class="">
+                      <img src="{{ qs.image.url }}" alt="{{ qs.title }}" class="slicica">
+                  </a>
+                  <p class="title">{{ qs.title }}</p>
+                  <p class="god-imdb"><small>{{ qs.godina }}</small></p>
+              </div>
+          {% endfor %}
+        {% else %}
+            <p>Nema filmova.</p>
+        {% endif %}
+        </div>
+    </div>
+    
+{% endblock %}

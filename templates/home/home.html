@@ -1,5 +1,54 @@
 {% extends 'base.html' %}
 
+{% block title %}
+    Filmovi | {{ tag.name | capfirst }}
+{% endblock %}
+
+
 {% block content %}
-    <h1>Zdravo svete!</h1>
+
+{#    {% if tag.name %}#}
+{#        <h1 class="podeok2">#}
+{#            {{ tag.name | capfirst }}#}
+{#        </h1>#}
+{#    {% else %}#}
+        <h1 class="podeok">
+            Filmo<span>M</span>ani<span>A</span>
+        </h1>
+{#    {% endif %}#}
+
+    <div class="kontejner">
+
+        <div class="tags">
+            <h5>Zanrovi</h5>
+            <p><small>Ukupno filmova i serija: {{ broj }}</small></p>
+
+            <div class="zanr">
+                <a href="{% url 'filmovi:filmovi' %}">Svi filmovi</a>
+                <a href="{% url 'serije:serije' %}">Sve serije</a>
+                <a href="{% url 'domaci_filmovi:domaci_filmovi' %}">Svi domaci filmovi</a>
+                <a href="{% url 'domace_serije:domace_serije' %}">Sve domace serije</a>
+                {% for mt in common_tags %}
+                    <a href="{% url 'tagged:tagged' mt.slug %}">{{ mt | capfirst}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    
+        <div class="lista">
+{#        {% if queryset %}#}
+          {% for c in combined %}
+                    <div class="objekt">
+                          <a href="{{ c.get_absolute_url }}" class="">
+                              <img src="{{ c.image.url }}" alt="{{ c.title }}" class="slicica">
+                          </a>
+                          <p class="title">{{ c.title }}</p>
+                            <p class="god-imdb"><small>{{ c.godina }}</small></p>
+                      </div>
+                {% endfor %}
+{#        {% else %}#}
+{#            <p>Nema filmova.</p>#}
+{#        {% endif %}#}
+        </div>
+    </div>
+
 {% endblock %}

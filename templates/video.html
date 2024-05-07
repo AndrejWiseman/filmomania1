@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'video-static.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <h1>{{ obj.title }}</h1>
+
+    <div class="video-kontejner">
+        <div class="video">
+                <iframe
+                        src="{{ obj.link_za_gledanje }}"
+                         width="1280" height="720"  title="{{ obj.title }}">
+                </iframe>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{#https://yyrxh-my.sharepoint.com/:v:/g/personal/andrej_yyrxh_onmicrosoft_com/Ecwi3U8-F_tNt5zl1McA2HQBA562JO7cfAfaI8V42GaXeA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=GRGEwh#}
+
+{#https://yyrxh-my.sharepoint.com/:v:/g/personal/andrej_yyrxh_onmicrosoft_com/EU4j_dc5IeNPpDqet1-8_pkB3PuuX4EYkruyDnFfaM_4IQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=1tiwHC#}
+
+

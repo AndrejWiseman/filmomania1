@@ -1,0 +1,162 @@
+
+
+.kontejner {
+    max-width: 1024px;
+    margin: 10px auto;
+    display: flex;
+}
+.podeok {
+    text-align: center;
+}
+.podeok span {
+    color: #799fd6;
+}
+.podeok2 {
+    color: #799fd6;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.tags {
+    flex: 1;
+    padding-left: 10px;
+    color: #8e8d8d;
+}
+.zanr {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: flex-start;
+    flex-direction: column;
+}
+.zanr a {
+    text-decoration: none;
+    color: #8e8d8d;
+    background-color: #2b3039;
+    padding: 3px 19px;
+    margin: 3px 0;
+    border-radius: 8px;
+}
+
+
+
+.lista {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex: 3;
+}
+.objekt {
+    margin: 10px auto;
+}
+.objekt p {
+    margin: 0;
+}
+.objekt .title {
+    color: #799fd6;
+}
+.objekt span {
+    background-color: rgba(219, 165, 6, 0.89);
+    padding: 0px 2px;
+    border-radius: 3px;
+    color: black;
+    font-weight: bold;
+    font-style: normal;
+}
+.objekt .god-imdb {
+    color: #8e8d8d;
+    font-style: italic;
+}
+.slicica {
+    max-width: 150px;
+    border-radius: 8px;
+    /*color: #799fd6;*/
+}
+
+/*=====================*/
+.detail-kontejner {
+    /*width: 80%;*/
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 5px;
+}
+.detail-top {
+    display: flex;
+    gap: 10px;
+    /*width: 100%;*/
+}
+.detail-slika {
+    /*width: 150px;*/
+    flex: 1;
+}
+.detail-slika img {
+    border-radius: 8px;
+    max-width: 183px;
+}
+.detail-info {
+    text-align: left;
+    flex: 1;
+}
+.detail-info h5 {
+    font-size: 15px;
+    color: #799fd6;
+}
+.detail-naslov {
+    text-align: left;
+    margin: 0;
+    font-size: 24px;
+}
+.detail-god {
+    margin-top: 2rem;
+}
+.godina {
+    margin: 0;
+    padding: 0;
+}
+.imdb {
+    margin: 0;
+    padding: 0;
+}
+.im {
+    /*color: rgba(219, 165, 6, 0.89);*/
+    color: #f3ce13;
+    font-weight: bold;
+}
+
+.detail-preu {
+    display: flex;
+    gap: 5px;
+}
+
+.detail-sadrzaj {
+    margin-top: 3rem;
+}
+.detail-sadrzaj h3 {
+    font-size: 1.3rem;
+}
+
+
+
+@media only screen and (max-width: 840px) {
+    .lista {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 684px) {
+    .lista {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 500px)  {
+    .kontejner {
+        /*max-width: 1024px;*/
+        /*margin: 10px auto;*/
+        flex-direction: column;
+    }
+    .zanr {
+        /*justify-content: center;*/
+        /*align-items: flex-start;*/
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+}

@@ -1,0 +1,75 @@
+
+
+.kontejner {
+    max-width: 1024px;
+    margin: 10px auto;
+}
+.lista {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.objekt {
+    margin: 0 auto;
+}
+.slicica {
+    max-width: 150px;
+}
+
+/*=====================*/
+.detail-kontejner {
+    /*width: 80%;*/
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 5px;
+}
+.detail-top {
+    display: flex;
+    gap: 10px;
+    /*width: 100%;*/
+}
+.detail-slika {
+    /*width: 150px;*/
+    flex: 1;
+}
+.detail-info {
+    text-align: left;
+    flex: 1;
+}
+.detail-info h5 {
+    font-size: 15px;
+}
+.detail-naslov {
+    text-align: left;
+    margin: 0;
+}
+.detail-god {
+    margin-top: 2rem;
+}
+.godina {
+    margin: 0;
+    padding: 0;
+}
+.imdb {
+    margin: 0;
+    padding: 0;
+}
+.im {
+    color: red;
+}
+
+.detail-sadrzaj {
+    margin-top: 3rem;
+}
+.detail-sadrzaj h3 {
+    font-size: 1.3rem;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .lista {
+        grid-template-columns: 1fr 1fr;
+    }
+    .detail-kontejner {
+        /*max-width: 90%;*/
+    }
+}

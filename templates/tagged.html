@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+{#    <link rel="stylesheet" href="{% static 'homestatic.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'tagged.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'home.css' %}">#}
+{% endblock %}
+
+{% block title %}
+    {{ tag.name | capfirst }}
+{% endblock %}
+
+
+{% block content %}
+
+{#    {% if tag.name %}#}
+        <h1 class="podeok2">
+            {{ tag.name | capfirst }}
+        </h1>
+{#    {% else %}#}
+{#        <h1 class="podeok">#}
+{#            Filmovi#}
+{#        </h1>#}
+{#    {% endif %}#}
+
+    <div class="kontejner">
+
+        <div class="tags">
+            <h5>Zanrovi</h5>
+{#            <p><small>Ukupno filmova i serija: {{  }}</small></p>#}
+        
+
+            <div class="zanr">
+                <a href="{% url 'filmovi:filmovi' %}">Svi filmovi</a>
+                <a href="{% url 'serije:serije' %}">Sve serije</a>
+                <a href="{% url 'domaci_filmovi:domaci_filmovi' %}">Svi domaci filmovi</a>
+                <a href="{% url 'domace_serije:domace_serije' %}">Sve domace serije</a>
+                {% for mt in common_tags %}
+                    <a href="{% url 'tagged:tagged' mt.slug %}">{{ mt | capfirst}}</a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="lista">
+{#        {% if queryset %}#}
+          {% for c in kombinirani_qs %}
+              <div class="objekt">
+                  <a href="{{ c.get_absolute_url }}" class="">
+                      <img src="{{ c.image.url }}" alt="{{ c.title }}" class="slicica">
+                  </a>
+                  <p>{{ c.title }}</p>
+              </div>
+          {% endfor %}
+{#        {% else %}#}
+{#            <p>Nema filmova.</p>#}
+{#        {% endif %}#}
+        </div>
+    </div>
+
+{% endblock %}

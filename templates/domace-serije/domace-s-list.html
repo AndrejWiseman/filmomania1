@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Domace serije
+{% endblock %}
+
+
+{% block content %}
+    <h1 class="podeok">Domace serije</h1>
+
+    <div class="kontejner">
+    
+        <div class="tags">
+            <h5>Zanrovi</h5>
+            <p>Broj serija: {{ queryset.count }}</p>
+
+            <div class="zanr">
+                <a href="{% url 'domace_serije:domace_serije' %}">Sve domace serije</a>
+                {% for mt in common_tags %}
+                    <a href="{% url 'domace_serije:tagged' mt.slug %}">{{ mt | capfirst}} ({{ mt.num_times }})</a>
+                {% endfor %}
+            </div>
+        </div>
+    
+        <div class="lista">
+          {% for qs in queryset %}
+              <div class="objekt">
+                  <a href="{{ qs.get_absolute_url }}" class="">
+                      <img src="{{ qs.image.url }}" alt="{{ qs.title }}" class="slicica">
+                  </a>
+                  <p>{{ qs.title }}</p>
+              </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}

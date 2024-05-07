@@ -1,0 +1,51 @@
+
+.home-front {
+    display: flex;
+}
+
+.home-naslov  {
+    text-align: center;
+    color: white;
+}
+
+.lista {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex: 3;
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 840px) {
+    .lista {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 684px) {
+    .lista {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 500px)  {
+    .kontejner {
+        /*max-width: 1024px;*/
+        /*margin: 10px auto;*/
+        flex-direction: column;
+    }
+    .zanr {
+        /*justify-content: center;*/
+        /*align-items: flex-start;*/
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+}

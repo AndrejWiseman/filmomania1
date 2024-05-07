@@ -1,0 +1,21 @@
+body {
+    /*background-color: #1e1e1e;*/
+    background-color: #262427;
+    color: #fcfcfc;
+}
+
+.podeok h1 {
+    text-align: center;
+    margin: 1rem;
+}
+
+.home-front {
+    min-height: 100%;
+
+}
+.logo span {
+    color: #799fd6;
+}
+
+
+

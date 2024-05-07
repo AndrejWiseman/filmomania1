@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ object.title }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="detail-kontejner">
+
+        <div class="detail-top">
+            <div class="detail-slika">
+                <img src="{{ object.image.url }}" alt="slika">
+            </div>
+            <div class="detail-info">
+                <h1 class="detail-naslov">{{ object.title }}</h1>
+                <h5>Originalni naziv: {{ object.originalni_naziv }}</h5>
+                
+                <div class="detail-god">
+                    <p class="godina">{{ object.godina }}</p>
+                    <p class="zanr">{{ object.tags.all|join:" / " }}</p>
+                    
+                </div>
+                <div class="detail-preuzmi">
+                    <p class="imdb"><span class="im">IMDb</span> {{ object.imdb_ocena }}</p>
+{#                    <div class="detail-preu">#}
+{#                        <a href="#" class="btn btn-info mt-1">Preuzmi film</a>#}
+{#                        <a href="#" class="btn btn-warning mt-1">Preuzmi prevod</a>#}
+{#                    </div>#}
+{#                    <a href="#" class="btn btn-info mt-1">Gledaj online</a>#}
+
+
+                    <div class="d-grid gap-2">
+                      <div class="detail-preu">
+                        <a href="{{ object.link_za_preuzimanje }}" class="btn btn-info mt-1">Preuzmi film</a>
+                        <a href="{{ object.link_za_prevod }}" class="btn btn-info mt-1">Preuzmi prevod</a>
+                      </div>
+                      <a href="{{ object.link_za_gledanje }}" target="_blank" class="btn btn-primary mt-1">Gledaj online</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+            
+
+        <div class="detail-sadrzaj">
+            <h3>Sadrzaj:</h3>
+            <div class="detail-tekst">
+                <p>
+                    {{ object.description | safe }}
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    
+{% endblock %}

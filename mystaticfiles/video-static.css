@@ -1,0 +1,22 @@
+
+.video-kontejner {
+    width: 100%;
+    padding: 20px;
+
+}
+
+.video {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+}
+.frame {
+    /*max-width: 640px;*/
+    /*max-height: 320px;*/
+}
+
+h1 {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}

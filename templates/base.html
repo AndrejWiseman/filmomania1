@@ -1,16 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}FilmoManiA{% endblock %}</title>
+    <title>{% block title %}Pocetna{% endblock %} | FilmoManiA</title>
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'myglobalcss.css' %}">
+    <link rel="stylesheet" href="{% static 'mojstatic.css' %}">
+    {% block css %}{% endblock %}
 </head>
 <body>
 
+{% include 'navbar.html' %}
+
 {% block content %}
 {% endblock %}
+
+{% include 'footer.html' %}
 
 </body>
 </html>
